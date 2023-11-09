@@ -1,0 +1,13 @@
+API 실행 및 확인 방법
+
+- 엘라스틱서치가 설치 되어있고 index/document를 생성했다는 가정 하에 이후부터 진행
+
+
+1. 로그를 쌓을 파일을 같은 경로에 배치 
+2. main.py 코드에서 로그가 쌓이는 파일 이름과 index명을 설정값에 맞게 변경
+3. uvicorn main:app --reload --host=0.0.0.0 --port 9200 명령어 실행하여 API 실행
+4. /docs로 호출하여 execute 실행하면 해당 로그파일을 elasticsearch로 수집하는 행위를 진행함
+5. http://${elasticsearch_ip}:9200/${index_name}/_search 주소로 웹브라우저에 접속하여 로그가 쌓이고 있는 것을 확인
+
+
+
