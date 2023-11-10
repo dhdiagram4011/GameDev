@@ -9,7 +9,7 @@ import requests
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-elastic = Elasticsearch([{'host': '34.64.94.214', 'port': 9200, 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 기                                       본 스키마
+elastic = Elasticsearch([{'host': '34.64.94.214', 'port': 9200, 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 정보                                 본 스키마
 
 #index_name = "chats" #인덱스생성필요, 인덱스내에 데이터 저장
 
@@ -21,12 +21,14 @@ async def elastic_logs():
     return {"message": "로그 저장 완료!", "document_id": response["_id"]}
 
  
-@app.get('/search-ui', response_class=HTMLResponse) #검색페이지 접속 화면
+#검색페이지 접속 화면
+@app.get('/search-ui', response_class=HTMLResponse) 
 def search_pg(request: Request):
     return templates.TemplateResponse("search.html", {"request":request, "results":None})
 
 
-#엘라스틱서치에서 데이터 검색하기 
+
+#엘라스틱서치에서 데이터 검색하기(index_name:chats 기반으로 데이터 검색) 
 def searchEngine(index_name, query): #message key 기반으로 데이터 검색
     try:
         result = elastic.search(index=index_name, body={"query": {"match" : {"message": query}}})
@@ -36,6 +38,7 @@ def searchEngine(index_name, query): #message key 기반으로 데이터 검색
     except Exception as e:
         print("Error:" , e)
         raise
+
 
 
 @app.get('/search')
