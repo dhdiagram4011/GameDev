@@ -21,7 +21,7 @@
     <h2>검색결과페이지</h2>
     <ul>
         {% for result in results %}
-            <li>{{ result._source.message }}</li>
+            <li>{{ result._source.last_name }}</li>
        {% endfor %}
     </ul>
     {% endif %}
