@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from elasticsearch import Elasticsearch
 from fastapi.templating import Jinja2Templates
+from datetime import datetime, timedelta
 import openai
 import requests
 
@@ -9,16 +10,25 @@ import requests
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-elastic = Elasticsearch([{'host': '34.64.94.214', 'port': 9200, 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 정보                                 본 스키마
+elastic = Elasticsearch([{'host': '34.64.225.78', 'port': 9200, 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 정보                                 본 스키마
 
-#index_name = "chats" #인덱스생성필요, 인덱스내에 데이터 저장
+index_name = "customer" #인덱스생성필요, 인덱스내에 데이터 저장
 
-@app.post('/customers/_doc') #port 9200 - elasticsearch port #fastapi 기동시에는 9200포트로 기동필요
+@app.post('/customer/_doc') #port 9200 - elasticsearch port #fastapi 기동시에는 9200포트로 기동필요
 async def elastic_logs():
-    with open("log.txt", 'r', encoding='utf-8') as file: #log.txt 파일을 열어서 읽음, 파일은 없으면 생성 필요
+
+    #현재 날짜 및 시간
+    current_time = datetime.utcnow()
+    expiration_time = current_time + timedelta(days=400) #로그 적재 후 400일동안 저장
+    with open("log.txt", 'r', encoding='utf-8') as file: #log.txt 파일을 열어서 읽음, 파일은 없으면 생성 필요+ 
         log_message = {"messages": file.read()}
-    response = elastic.index(index=index_name, body=log_message) #엘라스틱의 인덱스에 데이터를 보냄
-    return {"message": "로그 저장 완료!", "document_id": response["_id"]}
+        data= {
+            "log_message" : log_message,
+            "@timestamp" : current_time,
+            "expiration_time" : expiration_time
+        }
+        response = elastic.index(index=index_name, body=data)
+        return {"message": "로그 저장 완료!", "document_id": response["_id"]}
 
 
 #검색페이지 접속 화면
@@ -27,11 +37,10 @@ def search_pg(request: Request):
     return templates.TemplateResponse("search.html", {"request":request, "results":None})
 
 
-
 #엘라스틱서치에서 데이터 검색하기(index_name:chats 기반으로 데이터 검색) 
 def searchEngine(index_name, query): #message key 기반으로 데이터 검색
     try:
-        result = elastic.search(index=index_name, body={"query": {"match" : {"last_name": query}}})
+        result = elastic.search(index=index_name, body={"query": {"match" : {"log_message": query}}})
         print("Elastic Search Value :",  result)
 
         return result["hits"]["hits"]
@@ -45,7 +54,7 @@ def searchEngine(index_name, query): #message key 기반으로 데이터 검색
 def searchEngine_ep(index_name: str, query: str):
     try:
         results = searchEngine(index_name, query)
-        request = elastic.search(index=index_name, body={"query": {"match" : {"last_name": query}}})
+        request = elastic.search(index=index_name, body={"query": {"match" : {"log_message": query}}})
         return templates.TemplateResponse ("search.html",{"request": request, "results": results})
     except Exception as e:
         print(e)

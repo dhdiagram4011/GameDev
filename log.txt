@@ -6,4 +6,89 @@ Nov  9 01:34:56 dhkim-elasticsearch gce_workload_cert_refresh[14966]: 2023/11/09
 Nov  9 01:34:56 dhkim-elasticsearch gce_workload_cert_refresh[14966]: 2023/11/09 01:34:56: Done
 Nov  9 01:34:56 dhkim-elasticsearch systemd[1]: gce-workload-cert-refresh.service: Deactivated successfully.
 Nov  9 01:34:56 dhkim-elasticsearch systemd[1]: Finished GCE Workload Certificate refresh.
-Nov  9 01:35:18 dhkim-elasticsearch metricbeat[428]: {"log.level":"info","@timestamp":"2023-11-09T01:35:18.181Z","log.logger":"monitoring","log.origin":{                                        "file.name":"log/log.go","file.line":187},"message":"Non-zero metrics in the last 30s","service.name":"metricbeat","monitoring":{"metrics":{"beat":{"cgro                                        up":{"memory":{"mem":{"usage":{"bytes":75636736}}}},"cpu":{"system":{"ticks":36510,"time":{"ms":240}},"total":{"ticks":99360,"time":{"ms":530},"value":99                                        360},"user":{"ticks":62850,"time":{"ms":290}}},"handles":{"limit":{"hard":524288,"soft":524288},"open":9},"info":{"ephemeral_id":"c67fa6cc-78a3-447a-981f                                        -6cad88a9cb35","uptime":{"ms":6032029},"version":"8.10.4"},"memstats":{"gc_next":26941552,"memory_alloc":13324128,"memory_total":6971591952,"rss":6898892                                        8},"runtime":{"goroutines":73}},"libbeat":{"config":{"module":{"running":4}},"output":{"events":{"acked":75,"active":0,"batches":6,"total":75},"read":{"b                                        ytes":2656},"write":{"bytes":179323}},"pipeline":{"clients":14,"events":{"active":0,"filtered":5,"published":75,"total":80},"queue":{"acked":75}}},"metri                                        cbeat":{"mongodb":{"collstats":{"events":12,"success":12},"dbstats":{"events":12,"success":12},"metrics":{"events":3,"success":3},"status":{"events":3,"s                                        uccess":3}},"system":{"cpu":{"events":3,"success":3},"filesystem":{"events":8,"success":8},"fsstat":{"events":1,"success":1},"load":{"events":3,"success"                                        :3},"memory":{"events":3,"success":3},"network":{"events":9,"success":9},"process":{"events":17,"success":17},"process_summary":{"events":3,"success":3},                                        "socket_summary":{"events":3,"success":3}}},"system":{"load":{"1":0.17,"15":0.11,"5":0.1,"norm":{"1":0.085,"15":0.055,"5":0.05}}}},"ecs.version":"1.6.0"}      
+Nov  9 01:35:18 dhkim-elasticsearch metricbeat[428]: {"log.level":"info","@timestamp":"2023-11-09T01:35:18.181Z","log.logger":"monitoring","log.origin":{                                        "file.name":"log/log.go","file.line":187},"message":"Non-zero metrics in the last 30s","service.name":"metricbeat","monitoring":{"metrics":{"beat":{"cgro                                        up":{"memory":{"mem":{"usage":{"bytes":75636736}}}},"cpu":{"system":{"ticks":36510,"time":{"ms":240}},"total":{"ticks":99360,"time":{"ms":530},"value":99                                        360},"user":{"ticks":62850,"time":{"ms":290}}},"handles":{"limit":{"hard":524288,"soft":524288},"open":9},"info":{"ephemeral_id":"c67fa6cc-78a3-447a-981f                                        -6cad88a9cb35","uptime":{"ms":6032029},"version":"8.10.4"},"memstats":{"gc_next":26941552,"memory_alloc":13324128,"memory_total":6971591952,"rss":6898892                                        8},"runtime":{"goroutines":73}},"libbeat":{"config":{"module":{"running":4}},"output":{"events":{"acked":75,"active":0,"batches":6,"total":75},"read":{"b                                        ytes":2656},"write":{"bytes":179323}},"pipeline":{"clients":14,"events":{"active":0,"filtered":5,"published":75,"total":80},"queue":{"acked":75}}},"metri                                        cbeat":{"mongodb":{"collstats":{"events":12,"success":12},"dbstats":{"events":12,"success":12},"metrics":{"events":3,"success":3},"status":{"events":3,"s                                        uccess":3}},"system":{"cpu":{"events":3,"success":3},"filesystem":{"events":8,"success":8},"fsstat":{"events":1,"success":1},"load":{"events":3,"success"                                        :3},"memory":{"events":3,"success":3},"network":{"events":9,"success":9},"process":{"events":17,"success":17},"process_summary":{"events":3,"success":3},                                        "socket_summary":{"events":3,"success":3}}},"system":{"load":{"1":0.17,"15":0.11,"5":0.1,"norm":{"1":0.085,"15":0.055,"5":0.05}}}},"ecs.version":"1.6.0"}
+Nov 19 23:55:10 elasticsearch-test-dhkim systemd-logind[443]: Watching system buttons on /dev/input/event0 (Power Button)
+Nov 19 23:55:10 elasticsearch-test-dhkim systemd-logind[443]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Nov 19 23:55:10 elasticsearch-test-dhkim systemd-logind[443]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+Nov 19 23:55:10 elasticsearch-test-dhkim systemd-logind[443]: New seat seat0.
+Nov 19 23:55:13 elasticsearch-test-dhkim sshd[675]: Server listening on 0.0.0.0 port 22.
+Nov 19 23:55:13 elasticsearch-test-dhkim sshd[675]: Server listening on :: port 22.
+Nov 19 23:55:15 elasticsearch-test-dhkim systemd-logind[732]: Watching system buttons on /dev/input/event0 (Power Button)
+Nov 19 23:55:15 elasticsearch-test-dhkim systemd-logind[732]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Nov 19 23:55:15 elasticsearch-test-dhkim systemd-logind[732]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+Nov 19 23:55:15 elasticsearch-test-dhkim systemd-logind[732]: New seat seat0.
+Nov 19 23:55:15 elasticsearch-test-dhkim sshd[675]: Received SIGHUP; restarting.
+Nov 19 23:55:15 elasticsearch-test-dhkim sshd[675]: Server listening on 0.0.0.0 port 22.
+Nov 19 23:55:15 elasticsearch-test-dhkim sshd[675]: Server listening on :: port 22.
+Nov 19 23:57:52 elasticsearch-test-dhkim sshd[796]: Unable to negotiate with 121.164.64.57 port 61133: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:09:40 elasticsearch-test-dhkim sshd[1685]: Connection closed by 172.104.11.51 port 47852 [preauth]
+Nov 20 00:09:41 elasticsearch-test-dhkim sshd[1687]: Connection closed by 172.104.11.51 port 47862 [preauth]
+Nov 20 00:09:42 elasticsearch-test-dhkim sshd[1689]: Connection closed by 172.104.11.51 port 47872 [preauth]
+Nov 20 00:13:04 elasticsearch-test-dhkim sshd[1693]: Unable to negotiate with 121.135.45.114 port 60394: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:17:01 elasticsearch-test-dhkim CRON[2060]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 20 00:17:01 elasticsearch-test-dhkim CRON[2060]: pam_unix(cron:session): session closed for user root
+Nov 20 00:28:24 elasticsearch-test-dhkim sshd[2431]: Unable to negotiate with 119.203.230.19 port 61183: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:30:15 elasticsearch-test-dhkim sshd[2434]: Accepted publickey for user from 14.39.199.71 port 59061 ssh2: RSA SHA256:wsyih2/D8HalMuphA4aptEIc9vH/PmG3GQmNylDd3Qo
+Nov 20 00:30:15 elasticsearch-test-dhkim sshd[2434]: pam_unix(sshd:session): session opened for user user(uid=1004) by (uid=0)
+Nov 20 00:30:15 elasticsearch-test-dhkim systemd-logind[732]: New session 2 of user user.
+Nov 20 00:30:15 elasticsearch-test-dhkim systemd: pam_unix(systemd-user:session): session opened for user user(uid=1004) by (uid=0)
+Nov 20 00:30:25 elasticsearch-test-dhkim sudo:     user : TTY=pts/0 ; PWD=/root ; USER=root ; ENV== ; COMMAND=/bin/bash
+Nov 20 00:30:25 elasticsearch-test-dhkim sudo: pam_unix(sudo-i:session): session opened for user root(uid=0) by user(uid=1004)
+Nov 20 00:30:33 elasticsearch-test-dhkim sshd[2580]: Unable to negotiate with 60.108.124.230 port 41021: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:32:51 elasticsearch-test-dhkim sshd[2777]: error: kex_exchange_identification: Connection closed by remote host
+Nov 20 00:32:51 elasticsearch-test-dhkim sshd[2777]: Connection closed by 205.210.31.20 port 55920
+Nov 20 00:35:07 elasticsearch-test-dhkim sshd[2792]: error: kex_exchange_identification: Connection closed by remote host
+Nov 20 00:35:07 elasticsearch-test-dhkim sshd[2792]: Connection closed by 141.98.11.116 port 65105
+Nov 20 00:35:33 elasticsearch-test-dhkim sshd[3158]: Unable to negotiate with 112.187.18.4 port 62119: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:39:49 elasticsearch-test-dhkim sshd[3181]: Unable to negotiate with 222.102.32.67 port 50032: no matching host key type found. Their offer: ssh-rsa,ssh-dss [preauth]
+Nov 20 00:42:03 elasticsearch-test-dhkim sshd[3194]: error: kex_exchange_identification: Connection closed by remote host
+Nov 20 00:42:04 elasticsearch-test-dhkim sshd[3194]: Connection closed by 152.136.235.236 port 54170
+Nov 20 00:44:04 elasticsearch-test-dhkim sshd[3195]: fatal: Timeout before authentication for 152.136.235.236 port 59940
+Nov 20 00:44:07 elasticsearch-test-dhkim sshd[3205]: Invalid user default from 152.136.235.236 port 47198
+Nov 20 00:56:25 elasticsearch-test-dhkim sshd[3628]: fatal: Timeout before authentication for 152.136.235.236 port 58860
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3631]: fatal: Timeout before authentication for 61.133.58.107 port 17630
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3633]: fatal: Timeout before authentication for 61.133.58.107 port 17646
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3637]: fatal: Timeout before authentication for 61.133.58.107 port 17634
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3638]: fatal: Timeout before authentication for 61.133.58.107 port 17628
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3632]: fatal: Timeout before authentication for 61.133.58.107 port 17627
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3636]: fatal: Timeout before authentication for 61.133.58.107 port 17636
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3634]: fatal: Timeout before authentication for 61.133.58.107 port 17633
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3635]: fatal: Timeout before authentication for 61.133.58.107 port 17632
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3639]: fatal: Timeout before authentication for 61.133.58.107 port 17629
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3646]: fatal: Timeout before authentication for 61.133.58.107 port 17626
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3645]: fatal: Timeout before authentication for 61.133.58.107 port 17624
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3643]: fatal: Timeout before authentication for 61.133.58.107 port 17642
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3642]: fatal: Timeout before authentication for 61.133.58.107 port 17648
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3640]: fatal: Timeout before authentication for 61.133.58.107 port 17635
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3641]: fatal: Timeout before authentication for 61.133.58.107 port 17640
+Nov 20 00:57:09 elasticsearch-test-dhkim sshd[3644]: fatal: Timeout before authentication for 61.133.58.107 port 17647
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4019]: fatal: Timeout before authentication for 61.133.58.107 port 17656
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4020]: fatal: Timeout before authentication for 61.133.58.107 port 17654
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4022]: fatal: Timeout before authentication for 61.133.58.107 port 17655
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4021]: fatal: Timeout before authentication for 61.133.58.107 port 17657
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4023]: fatal: Timeout before authentication for 61.133.58.107 port 17659
+Nov 20 00:57:24 elasticsearch-test-dhkim sshd[4024]: fatal: Timeout before authentication for 61.133.58.107 port 17653
+Nov 20 00:58:26 elasticsearch-test-dhkim sshd[4029]: fatal: Timeout before authentication for 152.136.235.236 port 48428
+Nov 20 00:58:33 elasticsearch-test-dhkim sshd[675]: exited MaxStartups throttling after 00:03:24, 4 connections dropped
+Nov 20 00:59:48 elasticsearch-test-dhkim sshd[4046]: Connection closed by authenticating user root 159.223.36.164 port 58864 [preauth]
+Nov 20 00:59:48 elasticsearch-test-dhkim sshd[4048]: Connection closed by authenticating user root 159.223.36.164 port 59942 [preauth]
+Nov 20 00:59:49 elasticsearch-test-dhkim sshd[4050]: Connection closed by authenticating user root 159.223.36.164 port 59946 [preauth]
+Nov 20 00:59:49 elasticsearch-test-dhkim sshd[4052]: Connection closed by authenticating user root 159.223.36.164 port 59948 [preauth]
+Nov 20 00:59:50 elasticsearch-test-dhkim sshd[4054]: Connection closed by authenticating user root 159.223.36.164 port 59964 [preauth]
+Nov 20 00:59:51 elasticsearch-test-dhkim sshd[4056]: Connection closed by authenticating user root 159.223.36.164 port 59976 [preauth]
+Nov 20 00:59:51 elasticsearch-test-dhkim sshd[4058]: Connection closed by authenticating user root 159.223.36.164 port 59984 [preauth]
+Nov 20 00:59:52 elasticsearch-test-dhkim sshd[4060]: Connection closed by authenticating user root 159.223.36.164 port 59986 [preauth]
+Nov 20 00:59:52 elasticsearch-test-dhkim sshd[4062]: Connection closed by authenticating user root 159.223.36.164 port 59998 [preauth]
+Nov 20 01:00:33 elasticsearch-test-dhkim sshd[4040]: fatal: Timeout before authentication for 152.136.235.236 port 41282
+Nov 20 01:00:51 elasticsearch-test-dhkim sshd[4067]: Connection closed by authenticating user root 152.136.235.236 port 57016 [preauth]
+Nov 20 01:00:54 elasticsearch-test-dhkim sshd[4070]: Connection closed by authenticating user root 152.136.235.236 port 41634 [preauth]
+Nov 20 01:00:56 elasticsearch-test-dhkim sshd[4072]: Connection closed by authenticating user root 152.136.235.236 port 59658 [preauth]
+Nov 20 01:00:58 elasticsearch-test-dhkim sshd[4074]: Connection closed by authenticating user root 152.136.235.236 port 40776 [preauth]
+Nov 20 01:01:08 elasticsearch-test-dhkim sshd[4077]: Connection closed by authenticating user root 152.136.235.236 port 49598 [preauth]
+Nov 20 01:01:11 elasticsearch-test-dhkim sshd[4079]: Invalid user admin from 152.136.235.236 port 39488
+Nov 20 01:01:11 elasticsearch-test-dhkim sshd[4079]: Connection closed by invalid user admin 152.136.235.236 port 39488 [preauth]
+Nov 20 01:01:13 elasticsearch-test-dhkim sshd[4081]: Invalid user admin from 152.136.235.236 port 49314
+Nov 20 01:01:13 elasticsearch-test-dhkim sshd[4081]: Connection closed by invalid user admin 152.136.235.236 port 49314 [preauth]
+Nov 20 01:01:17 elasticsearch-test-dhkim sshd[4083]: Invalid user admin from 152.136.235.236 port 58424
+Nov 20 01:01:17 elasticsearch-test-dhkim sshd[4083]: Connection closed by invalid user admin 152.136.235.236 port 58424 [preauth]
+Nov 20 01:01:20 elasticsearch-test-dhkim sshd[4085]: Invalid user admin from 152.136.235.236 port 48402
