@@ -20,7 +20,7 @@ async def elastic_logs():
     #현재 날짜 및 시간
     current_time = datetime.utcnow()
     expiration_time = current_time + timedelta(days=400) #로그 적재 후 400일동안 저장
-    with open("log.txt", 'r', encoding='utf-8') as file: #log.txt 파일을 열어서 읽음, 파일은 없으면 생성 필요+ 
+    with open("log.txt", 'r', encoding='utf-8') as file: #log.txt 파일을 열어서 읽음, 파일은 없으면 생성 필요
         log_message = {"messages": file.read()}
         data= {
             "log_message" : log_message,
@@ -37,8 +37,8 @@ def search_pg(request: Request):
     return templates.TemplateResponse("search.html", {"request":request, "results":None})
 
 
-#엘라스틱서치에서 데이터 검색하기(index_name:chats 기반으로 데이터 검색) 
-def searchEngine(index_name, query): #message key 기반으로 데이터 검색
+#엘라스틱서치에서 데이터 검색하기(index_name 기반으로 데이터 검색) 
+def searchEngine(index_name, query): 
     try:
         result = elastic.search(index=index_name, body={"query": {"match" : {"log_message.messages": query}}})
         print("Elastic Search Value :",  result)
@@ -53,7 +53,7 @@ def searchEngine(index_name, query): #message key 기반으로 데이터 검색
 @app.get('/search')
 def searchEngine_ep(index_name: str, query: str):
     try:
-        results = searchEngine(index_name, query)
+        results = searchEngine(index_name, query) #인덱스에서 쿼리를 수행하여 단어를 검색
         request = elastic.search(index=index_name, body={"query": {"match" : {"log_message.messages": query}}})
         return templates.TemplateResponse ("search.html",{"request": request, "results": results})
     except Exception as e:
