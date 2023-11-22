@@ -40,7 +40,7 @@ def search_pg(request: Request):
 #엘라스틱서치에서 데이터 검색하기(index_name:chats 기반으로 데이터 검색) 
 def searchEngine(index_name, query): #message key 기반으로 데이터 검색
     try:
-        result = elastic.search(index=index_name, body={"query": {"match" : {"log_message":{"messages": query}}}})
+        result = elastic.search(index=index_name, body={"query": {"match" : {"log_message.messages": query}}})
         print("Elastic Search Value :",  result)
 
         return result["hits"]["hits"]
@@ -54,7 +54,7 @@ def searchEngine(index_name, query): #message key 기반으로 데이터 검색
 def searchEngine_ep(index_name: str, query: str):
     try:
         results = searchEngine(index_name, query)
-        request = elastic.search(index=index_name, body={"query": {"match" : {"log_message":{"messages": query}}}})
+        request = elastic.search(index=index_name, body={"query": {"match" : {"log_message.messages": query}}})
         return templates.TemplateResponse ("search.html",{"request": request, "results": results})
     except Exception as e:
         print(e)
