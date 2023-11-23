@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색페이지</title>
+</head>
+
+<body>
+    <h1>로그검색페이지</h1>
+    <form action="/search" method="get">
+        <label for="index_name">Index_name:</label>
+        <input type="text" id="index_name" name="index_name" required>
+        <br>
+        <label for="query">Query:</label>
+        <input type="text" id="query" name="query" required>
+        <br>
+        <button type="submit">검색</button>
+    </form>
+
+    {% if results %}
+    <h2>검색결과페이지</h2>
+    <ul>
+        {% for result in results %}
+            <li>{{ result._source.search_fields }}</li>
+       {% endfor %}
+    </ul>
+    {% endif %}
