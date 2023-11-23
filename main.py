@@ -10,7 +10,7 @@ import requests
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-elastic = Elasticsearch([{'host': '34.64.225.78', 'port': 9200, 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 정보
+elastic = Elasticsearch([{'host': '', 'port': , 'scheme':'http'}]) #엘라스틱에 데이터 넣기 위한 정보
 
 index_name = "customer" #인덱스생성필요, 인덱스내에 데이터 저장
 
