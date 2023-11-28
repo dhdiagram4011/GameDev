@@ -40,6 +40,7 @@ async def socket_msg(request: Request):
 @app.websocket("/socket")
 async def socket_ep(ws: WebSocket):
     await ws.accept() #소켓 접속 허용
+    await ws.send_text(f"connected client : {ws.client}")
     while True:
         data = await ws.receive_text() #수신대기
         await ws.send_text(f"message text was: {data}") # html의 {event.data}
