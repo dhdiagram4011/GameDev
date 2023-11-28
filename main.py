@@ -1,11 +1,10 @@
 #elastic port : 7842
-from fastapi import FastAPI, WebSocket, Request
+#from fastapi import WebSocket >> 웹소켓 가져오기 
+from fastapi import FastAPI, WebSocket, APIRouter, Request
 from fastapi.responses import HTMLResponse
 from elasticsearch import Elasticsearch
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from fastapi import APIRouter, FastAPI
-from fastapi import APIRouter, FastAPI, WebSocket 
 from datetime import datetime, timedelta
 import openai
 import requests
