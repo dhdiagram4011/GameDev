@@ -1,0 +1,40 @@
+<html>
+    <form id="msgForm">
+        <label for = "message">메시지를 입력해 주세요 :</label>
+        <input type="text" id="message" name="message" required>
+        <button type="button" onclick="sendMessage()">send</button>
+    </form>
+
+    <div id="messageContainer">
+       <script>
+        const socket = new WebSocket('ws://localhost:8000/socket')
+
+        //소켓 오픈
+        socket.addEventListener('open', (event) => {
+            console.log('WebSocket open', event);
+        });
+
+        //소켓오픈 후 메시지 수신
+        socket.addEventListener('message', (event) => {
+            const messageContainer = document.getElementById('messageContainer');
+            const newMessage = document.createElement('p');
+            newMessage.textContent = `Received Message/ ${event.data}`;
+            messageContainer.appendChild(newMessage);
+        });
+        
+        //소켓 close
+        socket.addEventListener('close', (event) => {
+            console.log('WebSocket close:', event);
+        });
+
+        //메시지 보내기
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+            socket.send(message); //메시지를 서버로 보내는 부분
+
+            messageInput.value = '';
+        }
+       </script> 
+    </div>
+</html>
