@@ -1,5 +1,4 @@
 #elastic port : 7842
-
 from fastapi import FastAPI, WebSocket, Request
 from fastapi.responses import HTMLResponse
 from elasticsearch import Elasticsearch
@@ -27,9 +26,6 @@ async def read_users():
     return [{"username": "Rick"} , {"username":"Morthy"}]
 app.include_router(router)
 
-#websocket
-#@router.websocket("/socket")
-
 
 #웹소켓을 통하여 메시지를 보내기 위하여 html 화면에서 메시지 입력
 #response_class=HTMLResponse >> html로 응답 반환
@@ -46,7 +42,7 @@ async def socket_ep(ws: WebSocket):
     while True:
         data = await ws.receive_text() #수신대기
         await ws.send_text(f"message text was: {data}") # html의 {event.data}
-        elastic.index(index='customer', body={'message':data})
+        elastic.index(index='customer', body={'message':data}) #elasticsearch 7.x 이상부터는 doc_type='_doc' 사용안함
 
 
 @app.post('/customer/_doc') #port 9200 - elasticsearch port #fastapi 기동시에는 9200포트로 기동필요
