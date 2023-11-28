@@ -1,3 +1,5 @@
+#elastic port : 7842
+
 from fastapi import FastAPI, WebSocket, Request
 from fastapi.responses import HTMLResponse
 from elasticsearch import Elasticsearch
@@ -8,7 +10,7 @@ from fastapi import APIRouter, FastAPI, WebSocket
 from datetime import datetime, timedelta
 import openai
 import requests
-
+import json
 
 app = FastAPI()
 router = APIRouter()
@@ -25,7 +27,6 @@ async def read_users():
     return [{"username": "Rick"} , {"username":"Morthy"}]
 app.include_router(router)
 
-
 #websocket
 #@router.websocket("/socket")
 
@@ -37,6 +38,7 @@ async def socket_msg(request: Request):
     return templates.TemplateResponse("socket.html", {"request":request})
 
 
+#화면에 메시지를 출력하고 이를 엘라스틱서치의 인덱스에 저장
 @app.websocket("/socket")
 async def socket_ep(ws: WebSocket):
     await ws.accept() #소켓 접속 허용
@@ -44,7 +46,8 @@ async def socket_ep(ws: WebSocket):
     while True:
         data = await ws.receive_text() #수신대기
         await ws.send_text(f"message text was: {data}") # html의 {event.data}
-        
+        elastic.index(index='customer', body={'message':data})
+
 
 @app.post('/customer/_doc') #port 9200 - elasticsearch port #fastapi 기동시에는 9200포트로 기동필요
 async def elastic_logs():
@@ -62,12 +65,10 @@ async def elastic_logs():
         return {"message": "로그 저장 완료!", "document_id": response["_id"]}
 
 
-
 #검색페이지 접속 화면
 @app.get('/search-ui', response_class=HTMLResponse)
 def search_pg(request: Request):
     return templates.TemplateResponse("search.html", {"request":request, "results":None})
-
 
 
 #인덱스 삭제
@@ -77,13 +78,11 @@ def index_delete(index_name:str):
     return {"message" : f"{index_name} is delete successfully"}
 
 
-
 #인덱스 생성
-@app.post('/creindex')
+# @app.post('/creindex')
 def index_create(index_name:str):
     elastic.indices.create(index=index_name)
     return {"message" : f"{index_name} is create successfully"}
-
 
 
 #엘라스틱서치에서 데이터 검색하기(index_name 기반으로 데이터 검색) 
