@@ -134,6 +134,7 @@
     <ClCompile Include="2-5.cpp" />
     <ClCompile Include="2array.cpp" />
     <ClCompile Include="4-1.cpp" />
+    <ClCompile Include="4-2.cpp" />
     <ClCompile Include="second.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
