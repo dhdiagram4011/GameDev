@@ -6,15 +6,15 @@
 그리고 배열에 든 숫자들과 평균을 출력.
 */
 
+/*
 using namespace std;
 
 int arr[10]; //i , j
 
-
 int main() {
-	int sum = 0;
+	int sum = { 0 };
 	//std::cout << "정수를 10개를 입력하여 저장해 주세요 :";
-	srand(time(NULL)); //시간을 기준으로 정수를 렌덤하게 생성 
+	//srand(time(NULL)); //시간을 기준으로 정수를 렌덤하게 생성
 	//std::cout << number; //random 생성
 	std::cout << endl;
 
@@ -32,6 +32,4 @@ int main() {
 	std::cout << "현 배열숫자들의 평균값은 : " << essenceAvg << "입니다";
 	std::cout << endl;
 }
-
-
-
+*/

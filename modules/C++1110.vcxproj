@@ -145,6 +145,15 @@
     <ClCompile Include="6-3.cpp" />
     <ClCompile Include="6-4.cpp" />
     <ClCompile Include="6-5.cpp" />
+    <ClCompile Include="array_exam.cpp" />
+    <ClCompile Include="array_exam01.cpp" />
+    <ClCompile Include="pointer01.cpp" />
+    <ClCompile Include="pointer_exam01.cpp" />
+    <ClCompile Include="pointer_exam02.cpp" />
+    <ClCompile Include="pointer_exam03.cpp" />
+    <ClCompile Include="pointer_exam04.cpp" />
+    <ClCompile Include="pointer_exam05.cpp" />
+    <ClCompile Include="pointer_exam06.cpp" />
     <ClCompile Include="second.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,9 +1,9 @@
-
+/*
 #include <iostream>
 #include <stdlib.h>
 
 using namespace std;
-
+*/
 
 
 /*
@@ -12,14 +12,15 @@ using namespace std;
 틀리면 게임 종료
 */
 
-
+/*
 int dan[8]; //dan
 int number[9]; //number
 int problemNum[3];
 int answer = {0};
-
+*/
 // i * j = k
 
+/*
 //2단부터 9단을 렌덤으로 3개 문제 출력
 int main() {
 	srand(time(NULL)); //시간을 기준으로 정수 렌덤생성
@@ -36,3 +37,4 @@ int main() {
 				break;
 		}
 	}
+*/

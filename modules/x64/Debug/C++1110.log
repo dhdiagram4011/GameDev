@@ -1,3 +1,3 @@
-﻿  6-5.cpp
-C:\C++\C++1110\6-5.cpp(19,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  6-4.cpp
+C:\C++\C++1110\6-4.cpp(42,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   C++1110.vcxproj -> C:\C++\C++1110\x64\Debug\C++1110.exe
