@@ -159,6 +159,7 @@
     <ClCompile Include="pointer_exam07.cpp" />
     <ClCompile Include="pointer_exam08.cpp" />
     <ClCompile Include="pointer_exam09.cpp" />
+    <ClCompile Include="practice01.cpp" />
     <ClCompile Include="second.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
